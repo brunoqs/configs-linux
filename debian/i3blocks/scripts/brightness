@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+dir=$(dirname $0)
+source $dir/util.sh
+
+full=""
+short=""
+status=0
+
+step=${BLOCK_INSTANCE:-5}
+
+getBrightness() {
+	xbacklight
+}
+
+
+case $BLOCK_BUTTON in
+	# scroll up
+	# raise bright
+	4) xbacklight -inc $step >/dev/null ;;
+
+	# scroll down
+	# lower bright
+	5) xbacklight -dec $step >/dev/null ;;
+esac
+
+light=$(getBrightness)
+
+full="${light%.*}%"
+short=$light
+
+echo $full
+echo $short
+exit $status
