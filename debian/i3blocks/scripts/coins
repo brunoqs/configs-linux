@@ -1,0 +1,11 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+	#left click
+	1) /usr/share/i3blocks/trx ;;
+	#right click
+	3) /usr/share/i3blocks/xrb ;;
+	#anyone 
+	*) /usr/share/i3blocks/btc ;;
+esac
+

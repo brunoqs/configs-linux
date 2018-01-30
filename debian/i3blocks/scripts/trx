@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+import json
+import urllib.request
+
+with urllib.request.urlopen("https://api.coinmarketcap.com/v1/ticker/tron/?convert=BRL") as url:
+    data = json.loads(url.read().decode())
+    value = float(data[0]["price_brl"])
+    print ("TRX: " + "R$" + str(float("{:.4f}".format(value))))
+
