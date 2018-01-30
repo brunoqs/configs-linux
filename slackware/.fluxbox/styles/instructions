@@ -1,0 +1,32 @@
+to install...
+
+(replace "user" directory with your username in the following 3 steps)
+
+place Open_Sans in your home/user/.fonts/ (create directory if needed)
+
+place Elegant Mick in your home/user/.fluxbox/styles/ (create if needed)
+
+edit /home/user/.fluxbox/init so the following line reads
+session.styleFile:	/home/user/.fluxbox/styles/Elegant Mick
+
+save init
+
+restart fluxbox
+
+
+______________________
+
+Elegant Mick is free for personal use, modification, and redistribution
+under Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License.
+
+thanks to 
+Lyrae for Black-White GTK theme, which was modified to 
+Elegant One by Dzakusek, and then again to 
+Elegant Brit for GTK by fmrbpensador
+everyone who ever worked with Elegant Brit including
+Envyouraudience, who created an Openbox theme
+and flatcat, who created a Fluxbox theme.
+
+This theme was made specifically for Manjaro Linux, thanks to oberon
+for maintaining the Manjaro Fluxbox builds!
+______________________

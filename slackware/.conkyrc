@@ -1,0 +1,33 @@
+background yes
+use_xft yes
+xftfont Vibrocentric:size=8
+xftalpha 3.0
+
+update_interval 1.0
+total_run_times 0
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+minimum_size 1350 0  
+
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+own_window_colour 242424
+
+double_buffer yes
+#no_buffers no
+default_color darkgreen
+color1 eeeeee
+alignment top_left
+imlib_cache_size 0
+
+gap_x 8
+gap_y 6
+
+TEXT
+${color}unclear ${color1}| ${time %H:%M:%S} ${time %A} ${time  %d.%m.%Y} | ${color}uptime: ${color1}${uptime} | ${color}temp: ${color1}$acpitemp °C | ${color}kernel ${color1}$kernel | ${color}slack ${color1}$machine | ${color}home: ${color1}${fs_used /home}/${fs_size /home} / ${fs_free_perc /home}% | ${color}mem: ${color1}$mem/$memmax / $memperc% | ${color}battery: ${color1} ${battery_short BAT1} ${battery_bar 5,50 BAT1} ${color}>>${color1}${battery_time BAT1} 
+#${color}${hr 2}$color1

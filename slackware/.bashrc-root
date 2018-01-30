@@ -1,0 +1,18 @@
+#Arrumando terminal \/ config original
+#export PS1='\[\033[01;31m\]\u \[\033[01;34m\]\w \[\e[1;31m\]\$ \[\033[00m\]'
+
+#config personalizada
+R="\[\033[0;31m\]"
+BR="\[\033[1;31m\]"
+NONE="\[\033[0m\]"
+BW="\[\033[1;37m\]"
+export PS1="$R┌─[$BR\u$R]$BR@$R[$BR${HOSTNAME%%.*}$R]$BW:\w\n$R└─╼$BR \\$ $NONE"
+
+#aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+#autocomplete
+if [ "$PS1" ]; then
+	complete -cf man
+fi

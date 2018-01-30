@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+
+import json
+import urllib.request
+
+with urllib.request.urlopen("https://api.bitvalor.com/v1/ticker.json") as url:
+    data = json.loads(url.read().decode())
+    print("R$" + str(data["ticker_24h"]['exchanges']['FOX']['last']))

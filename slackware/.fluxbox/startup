@@ -1,0 +1,58 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+# Change your keymap:
+xmodmap "/home/unclear/.Xmodmap"
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+# unclutter -idle 2 &
+# wmnd &
+# wmsmixer -w &
+# idesk &
+
+# Start DBUS session bus:
+if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
+   eval $(dbus-launch --sh-syntax --exit-with-session)
+fi
+
+#Abre o gerenciador de energia do xfce4
+#(sleep 9s && xfce4-power-manager) &
+
+#Inicia o pcloud
+#(sleep 20s && psyncgui) &
+
+#Abre o conky
+(sleep 1s && conky -q) &
+
+#Abre o wmCalendar
+(sleep 1s && wmCalendar) &
+
+#Abre o wmMatrix
+#(sleep 1s && wmMatrix) &
+
+#Abre o tint2
+(sleep 1s && tint2) &
+
+#wicd network Manager
+#(sleep 4s && wicd-gtk) &
+
+#inicia o pulseaudio
+(sleep 8s && pulseaudio --start) &
+
+#carregando wallpaper
+(sleep 1s && DISPLAY=:0.0 feh --bg-scale ~/.fluxbox/backgrounds/slackware.png && DISPLAY=:0.1 feh --bg-scale ~/.fluxbox/backgrounds/slackware.png) &
+
+#arrumando dual mon
+(xrandr --output eDP1 --auto --output HDMI2 --auto --above eDP1) &
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+
+exec fluxbox
+# or if you want to keep a log:
+# exec fluxbox -log "/home/unclear/.fluxbox/log"
