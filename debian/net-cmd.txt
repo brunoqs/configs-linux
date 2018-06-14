@@ -1,0 +1,8 @@
+# Criando proxy utilizando ssh (utilizar -f para criar um daemon)
+ssh -D <porta-local> -C -N <user>@<ip>
+
+# Lendo ips da rede local 
+sudo arp-scan --interface=<interface-rede> --localnet
+
+# Desconbrindo todos os macs locais
+sudo fing -n <ip>/<len>
