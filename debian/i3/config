@@ -173,4 +173,12 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3blocks
+
+        colors{
+                focused_workspace #3d7f1a #23490F #ffffff
+        }
 }
+
+#colors
+client.focused          #ffffff #23490F #ffffff #ffffff  #ffffff
+
